@@ -1,0 +1,23 @@
+﻿/*body {
+    background: url("/Images/voleibol.jpg");
+}*/
+
+.principal {
+    width: 30em;
+}
+
+.tituloForm {
+    color:white;
+}
+
+.navPrin{
+    font-size: 1.5em;
+}
+
+.icono {
+    font-size: 3em;
+}
+
+li {
+    display: inline-block;
+}
