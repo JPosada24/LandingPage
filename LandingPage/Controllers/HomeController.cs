@@ -29,7 +29,7 @@ namespace LandingPage.Controllers
             };
 
             du.AgregarUsuario(usu);
-            return RedirectToAction("Index");
+            return RedirectToAction("Mensaje");
         }
 
         public ActionResult ConsultarTodo()
@@ -38,11 +38,25 @@ namespace LandingPage.Controllers
             return View(da.RecuperarUsuarios());
         }
 
-        public ActionResult Contact()
+        public ActionResult Mensaje()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            DatosUsuarios du = new DatosUsuarios();
+            Usuario usu = du.RecuperarId(id);
+            return View(usu);
+        }
+
+        // POST: Home/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            DatosUsuarios du = new DatosUsuarios();
+            du.Eliminar(id);
+            return RedirectToAction("Index");
         }
     }
 }

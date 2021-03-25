@@ -71,5 +71,50 @@ namespace LandingPage.Models
             con.Close();
             return usuarios;
         }
+
+        //OBTENER ID
+
+        public Usuario RecuperarId(int id)
+        {
+            Conectar();
+            SqlCommand com = new SqlCommand("SELECT * FROM usuarios WHERE id = @id", con);
+            com.Parameters.Add("@id", SqlDbType.Int);
+            com.Parameters["@id"].Value = id;
+
+            con.Open();
+
+            SqlDataReader registro = com.ExecuteReader();
+            Usuario usu = new Usuario();
+
+            if (registro.Read())
+            {
+                usu.Nombre = registro["nombre"].ToString();
+                usu.Apellido = registro["apellido"].ToString();
+                usu.Email = registro["email"].ToString();
+                usu.Telefono = long.Parse(registro["telefono"].ToString());
+                usu.Edad = int.Parse(registro["edad"].ToString());
+
+            }
+
+            con.Close();
+            return usu;
+        }
+
+        //DELETE
+
+        public int Eliminar(int id)
+        {
+            Conectar();
+
+            SqlCommand com = new SqlCommand("DELETE FROM usuarios WHERE id = @id", con);
+
+            com.Parameters.Add("@id", SqlDbType.Int);
+            com.Parameters["@id"].Value = id;
+
+            con.Open();
+            int i = com.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
     }
 }

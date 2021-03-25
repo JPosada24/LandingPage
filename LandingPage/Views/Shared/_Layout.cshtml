@@ -25,23 +25,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav navbar-right navPrin">
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("ConsultarTodo", "Home")">Consultar</a>
+                        <a class="nav-link" href="@Url.Action("Index","Home")">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link" href="@Url.Action("ConsultarTodo", "Home")">Registrados</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p style="text-align:center"> Dragones Volley Club @DateTime.Now.Year &copy; Todos los derechos reservados.</p>
         </footer>
     </div>
 

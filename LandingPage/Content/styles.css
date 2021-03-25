@@ -1,6 +1,8 @@
-﻿/*body {
+﻿.fondo {
     background: url("/Images/voleibol.jpg");
-}*/
+    height: 50em;
+}
+
 
 .principal {
     width: 30em;
@@ -20,4 +22,23 @@
 
 li {
     display: inline-block;
+}
+
+.card {
+    margin: 3em;
+}
+
+.texto {
+    font-family: 'Comic Sans MS';
+    font-size: 1.6em;
+    color: white;
+}
+
+p{
+    text-align:justify;
+}
+
+.iconos {
+    text-align:center;
+    font-size: 3em;
 }
